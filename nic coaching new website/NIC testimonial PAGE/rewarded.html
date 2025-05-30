@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIC Institute - Testimonials</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="\nic.style.css">
+  <style>
+   /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #222;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+.nav-links a {
+  margin-left: 25px;
+  color: white;
+  position: relative;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00c2ff;
+}
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #00c2ff;
+  width: 0%;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+ .user-profile {
+      margin-left: 25px;
+      display: flex;
+      align-items: center;
+    }
+    .user-profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00c2ff;
+      transition: transform 0.3s ease;
+    }
+    .user-profile img:hover {
+      transform: scale(1.1);
+    }
+    .user-profile span {
+      margin-left: 10px;
+      font-weight: 500;
+      color: white;
+    }
+
+    /* Testimonial Page Styles */
+    .testimonial-page {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .sidebar {
+      flex: 1;
+      max-width: 300px;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 10px;
+    }
+    .sidebar h3 {
+      margin-bottom: 15px;
+    }
+    .filter-group {
+      margin-bottom: 15px;
+    }
+    .filter-group h4 {
+      margin-bottom: 10px;
+    }
+    .filter-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .sidebar button {
+      background: #00c2ff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .testimonial-list {
+      flex: 3;
+      padding: 20px;
+    }
+    .testimonial-list h2 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #222;
+    }
+    .testimonial-card {
+      display: flex;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .thumbnail {
+      flex: 1;
+      max-width: 150px;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .testimonial-info {
+      flex: 2;
+      padding-left: 15px;
+    }
+    .testimonial-info h3 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .testimonial-info p {
+      margin-bottom: 10px;
+      font-style: italic;
+      color: #555;
+    }
+    .testimonial-info a {
+      color: #00c2ff;
+      text-decoration: none;
+    }
+     /* Footer */
+.footer {
+  padding: 20px;
+  background: #222;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0 0 15px 15px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Header (same as home page) -->
+<header class="navbar">
+  <a href="C:\Autodesk\WI\nic coaching new website\nic home page\NIC.html" class="logo">NIC Institute</a>
+  <nav class="nav-links">
+    <a href="C:\Autodesk\WI\nic coaching new website\nic home page\NIC.html" class="active">Home</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\IGNOU\IGNOU.HTML">IGNOU Institute</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\patrachar\patrachar.html">Patrachar Vidyalaya</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\hhps\hhps.html">Happy Holy School</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\computer education\computereducation.html">Computer Education</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\COURSES\COURSES.html">Courses</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\about nic\about nic.html">About NIC</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\JBT-BED-LLB\JBT-BED-LLB.html">J.B.T. | B.Ed | LLB</a>
+    <a href="C:\Autodesk\WI\nic coaching new website\CONTACT\contact.html">Contact</a>
+  </nav>
+  <a href="C:\Autodesk\WI\nic coaching new website\log-inpage\login.html" class="user-profile">
+    <img src="C:\Autodesk\WI\nic coaching new website\prfir.png" alt="User Profile">
+    <span>User</span>
+  </a>
+</header>
+
+<!-- Testimonial Page Content -->
+<section class="testimonial-page">
+  <div class="container">
+    <!-- Sidebar with Filters -->
+    <div class="sidebar">
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <h4>Course Type</h4>
+        <label><input type="checkbox" name="course" value="medical"> Medical</label>
+        <label><input type="checkbox" name="course" value="engineering"> Engineering</label>
+        <label><input type="checkbox" name="course" value="foundation"> Foundation</label>
+        <label><input type="checkbox" name="course" value="government"> Government Exams</label>
+      </div>
+      <div class="filter-group">
+        <h4>Exams</h4>
+        <label><input type="checkbox" name="exam" value="jee"> JEE</label>
+        <label><input type="checkbox" name="exam" value="neet"> NEET</label>
+        <label><input type="checkbox" name="exam" value="ssc"> SSC</label>
+        <label><input type="checkbox" name="exam" value="banking"> Banking</label>
+      </div>
+      <div class="filter-group">
+        <h4>Target Years</h4>
+        <label><input type="checkbox" name="year" value="2025"> 2025</label>
+        <label><input type="checkbox" name="year" value="2024"> 2024</label>
+      </div>
+      <button>Apply</button>
+    </div>
+
+    <!-- Testimonial List -->
+    <div class="testimonial-list">
+      <h2>NIC Institute Student Testimonials</h2>
+      <!-- Testimonial Card 1 -->
+      <div class="testimonial-card">
+        <div class="thumbnail">
+          <img src="C:\Autodesk\WI\nic coaching new website\NIC ACHEIVMENT\aakanksha kaushal iit.jpg" alt="Student 1">
+        </div>
+        <div class="testimonial-info">
+          <h3>John Doe</h3>
+          <p>"I am very happy with the coaching at NIC Institute. It helped me achieve my goals."</p>
+          <a href="#">Show More</a>
+        </div>
+      </div>
+      <!-- Testimonial Card 2 -->
+      <div class="testimonial-card">
+        <div class="thumbnail">
+          <img src="C:\Autodesk\WI\nic coaching new website\NIC ACHEIVMENT\ANJALI KUMARI NEET.jpg" alt="Student 2">
+        </div>
+        <div class="testimonial-info">
+          <h3>Jane Smith</h3>
+          <p>"The faculty at NIC Institute is excellent. They provide personalized attention to each student."</p>
+          <a href="#">Show More</a>
+        </div>
+      </div>
+      <!-- Add more testimonial cards as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer (same as home page) -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 NIC Institute. All Rights Reserved.</p>
+    <p>Empowering Education | Contact: +91-XXXXXXXXXX | Email: info@nicinstitute.in</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - NIC Institute</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #222;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links a {
+      margin-left: 25px;
+      color: white;
+      position: relative;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #00c2ff;
+    }
+    .nav-links a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: #00c2ff;
+      width: 0%;
+      transition: 0.4s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+   
+    .user-profile {
+      margin-left: 25px;
+      display: flex;
+      align-items: center;
+    }
+    .user-profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00c2ff;
+      transition: transform 0.3s ease;
+    }
+    .user-profile img:hover {
+      transform: scale(1.1);
+    }
+    .user-profile span {
+      margin-left: 10px;
+      font-weight: 500;
+      color: white;
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 30px;
+      margin-bottom: 60px;
+    }
+    .hero img.bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.5);
+    }
+    .hero-content {
+      z-index: 1;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      padding: 15px 30px;
+      background: #00c2ff;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background: #0099cc;
+    }
+
+    /* Category Section */
+    .category {
+      padding: 60px 20px;
+      background: #f5f5f5;
+      text-align: center;
+      border-radius: 15px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+    .category h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+    .course-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .course-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+      width: 250px;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .course-card i {
+      font-size: 3rem;
+      color: #00c2ff;
+      margin-bottom: 10px;
+    }
+    .course-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: 600;
+    }
+    .course-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .syllabus-btn, .enroll-now {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .syllabus-btn {
+      background-color: #00c2ff;
+    }
+    .syllabus-btn:hover {
+      background-color: #0099cc;
+    }
+    .enroll-now {
+      background-color: #00c2ff;
+    }
+    .enroll-now:hover {
+      background-color: #0099cc;
+    }
+
+    /* Office Section */
+    .office-section {
+      padding: 60px 20px;
+      background: #f5f5f5;
+      text-align: center;
+      border-radius: 15px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+    .office-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+    .office-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .office-details {
+      max-width: 400px;
+      text-align: left;
+    }
+    .office-map iframe {
+      border: 0;
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      background: #222;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+      border-radius: 0 0 15px 15px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #333;
+    }
+    #modal-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    #modal-content {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .nav-links {
+        margin-top: 20px;
+      }
+      .nav-links a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+      }
+      .user-profile {
+        margin-left: 15px;
+        width: 35px;
+        height: 35px;
+      }
+      .user-profile img {
+        width: 100%;
+        height: 100%;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .course-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .course-card {
+        width: 90%;
+      }
+      .office-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<header class="navbar">
+    <a href="C:\Autodesk\WI\nic coaching new website\nic home page\NIC.html" class="logo">NIC Institute</a>
+    <nav class="nav-links">
+      <a href="C:\Autodesk\WI\nic coaching new website\nic home page\NIC.html" >Home</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\IGNOU\IGNOU.HTML">IGNOU Institute</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\patrachar\patrachar.html">Patrachar Vidyalaya</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\hhps\hhps.html">Happy Holy School</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\computer education\computereducation.html">Computer Education</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\COURSES\COURSES.html"class="active">Courses</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\about nic\about nic.html">About NIC</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\JBT-BED-LLB\JBT-BED-LLB.html">J.B.T. | B.Ed | LLB</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\CONTACT\contact.html">Contact</a>
+    </nav>
+      <a href="C:\Autodesk\WI\nic coaching new website\log-inpage\login.html" class="user-profile">
+        <img src="C:\Autodesk\WI\nic coaching new website\prfir.png" alt="User Profile">
+        <span>User</span>
+      </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="bg-image" src="C:\Autodesk\WI\nic coaching new website\NIC ACHEIVMENT\reward.jpg" alt="Background">
+    <div class="hero-content">
+      <h1>Unlock Your Future with NIC Institute</h1>
+      <p>Top-tier coaching for entrance, government, and technical exams.</p>
+      <a href="#courses" class="cta-button">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- Entrance Exams Section -->
+  <section class="category" id="courses">
+    <h2>Entrance Exams</h2>
+    <div class="course-cards">
+      <!-- IIT-JEE Card -->
+      <div class="course-card" data-course="iit-jee">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>IIT-JEE Preparation</h3>
+        <p>Master JEE Main & Advanced for top engineering colleges.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- NEET Card -->
+      <div class="course-card" data-course="neet">
+        <i class="fas fa-stethoscope"></i>
+        <h3>NEET Preparation</h3>
+        <p>Excel in NEET for admission to premier medical institutions.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- LLB & Judiciary Card -->
+      <div class="course-card" data-course="llb-judiciary">
+        <i class="fas fa-gavel"></i>
+        <h3>LLB & Judiciary Exams</h3>
+        <p>Prepare for law entrance and judiciary exams.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- Polytechnic Card -->
+      <div class="course-card" data-course="polytechnic">
+        <i class="fas fa-tools"></i>
+        <h3>Polytechnic Entrance</h3>
+        <p>Technical training for polytechnic entrance exams.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Exams Section -->
+  <section class="category">
+    <h2>Educational Exams</h2>
+    <div class="course-cards">
+      <!-- CTET Card -->
+      <div class="course-card" data-course="ctet">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>CTET Preparation</h3>
+        <p>Central Teacher Eligibility Test for teaching aspirants.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- HTET Card -->
+      <div class="course-card" data-course="htet">
+        <i class="fas fa-school"></i>
+        <h3>HTET Preparation</h3>
+        <p>Haryana Teacher Eligibility Test for state teaching jobs.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- UPTET Card -->
+      <div class="course-card" data-course="uptet">
+        <i class="fas fa-book"></i>
+        <h3>UPTET Preparation</h3>
+        <p>Uttar Pradesh Teacher Eligibility Test coaching.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitive Exams Section -->
+  <section class="category">
+    <h2>Competitive Exams</h2>
+    <div class="course-cards">
+      <!-- UPSC Card -->
+      <div class="course-card" data-course="upsc">
+        <i class="fas fa-landmark"></i>
+        <h3>UPSC Preparation</h3>
+        <p>Training for IAS, IPS, and IFS exams.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- SSC Card -->
+      <div class="course-card" data-course="ssc">
+        <i class="fas fa-briefcase"></i>
+        <h3>SSC Exams</h3>
+        <p>Prepare for SSC CGL, CHSL, and MTS exams.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- Bank PO & Clerk Card -->
+      <div class="course-card" data-course="bank-po-clerk">
+        <i class="fas fa-university"></i>
+        <h3>Bank PO & Clerk Exams</h3>
+        <p>Coaching for IBPS PO, Clerk, and SBI exams.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Govt. Exams Section -->
+  <section class="category">
+    <h2>Technical Govt. Exams</h2>
+    <div class="course-cards">
+      <!-- GATE Card -->
+      <div class="course-card" data-course="gate">
+        <i class="fas fa-microchip"></i>
+        <h3>GATE Preparation</h3>
+        <p>Prepare for M.Tech and PSU recruitment.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- Railway ALP Card -->
+      <div class="course-card" data-course="railway-alp">
+        <i class="fas fa-train"></i>
+        <h3>Railway ALP Exams</h3>
+        <p>Technical prep for Assistant Loco Pilot exams.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+      <!-- SSC JE Card -->
+      <div class="course-card" data-course="ssc-je">
+        <i class="fas fa-tools"></i>
+        <h3>SSC JE Exams</h3>
+        <p>Junior Engineer prep in civil, mechanical, electrical.</p>
+        <button class="syllabus-btn">View Syllabus</button>
+        <button class="enroll-now">Enroll Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Section -->
+  <section class="office-section">
+    <h2>Contact Us</h2>
+    <div class="office-content">
+      <div class="office-details">
+        <p><strong>Address:</strong> NIC Institute, Laxmi Tower, Plot No-4, 81/1, Service Road, Opp. Badarpur Bus Terminal, New Delhi-110044</p>
+        <p><strong>Phone:</strong> +91 9582752030</p>
+        <p><strong>Email:</strong> info@niccomputer.com</p>
+      </div>
+      <div class="office-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.191083714676!2d77.30314931508045!3d28.50350698246988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce0d6b7c07c7b%3A0x7c7b8b8e9c8e6e6e!2sBadarpur%2C%20New%20Delhi%2C%20Delhi%20110044%2C%20India!5e0!3m2!1sen!2sin!4v1698765432109!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 NIC Institute. All Rights Reserved.</p>
+      <p>Empowering Education | Contact: +91-XXXXXXXXXX | Email: info@nicinstitute.in</p>
+    </div>
+  </footer>
+
+  <!-- Modal for Syllabus -->
+  <div id="syllabus-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="hideModal()">×</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-content"></p>
+    </div>
+  </div>
+
+  <script>
+    // Syllabus data
+    const syllabi = {
+      "iit-jee": {
+        title: "IIT-JEE Syllabus",
+        content: `Physics:<br> 
+          - Mechanics: Kinematics, Newton's Laws, Work-Power-Energy, Rotational Motion, Gravitation<br> 
+          - Electrodynamics: Electrostatics, Current Electricity, Magnetism, Electromagnetic Induction, AC<br> 
+          - Optics: Ray Optics, Wave Optics<br> 
+          - Thermodynamics: Laws of Thermodynamics, Kinetic Theory of Gases, Thermal Properties<br> 
+          - Modern Physics: Atomic Structure, Nuclear Physics, Dual Nature of Matter<br><br>
+
+          Chemistry:<br> 
+          - Physical Chemistry: Mole Concept, Thermodynamics, Chemical Kinetics, Equilibrium, Electrochemistry<br> 
+          - Organic Chemistry: Hydrocarbons, Alcohols, Aldehydes, Ketones, Amines, Polymers<br> 
+          - Inorganic Chemistry: Periodic Table, Chemical Bonding, Coordination Compounds, Metallurgy<br><br>
+
+          Mathematics:<br> 
+          - Algebra: Complex Numbers, Quadratic Equations, Sequences, Binomial Theorem<br> 
+          - Calculus: Limits, Derivatives, Integrals, Differential Equations<br> 
+          - Coordinate Geometry: Straight Lines, Circles, Parabola, Ellipse, Hyperbola<br> 
+          - Trigonometry: Trigonometric Identities, Equations, Inverse Trigonometry`
+      },
+      "neet": {
+        title: "NEET Syllabus",
+        content: `Biology:<br> 
+          - Diversity in Living World<br> 
+          - Cell Structure and Function<br> 
+          - Genetics and Evolution<br> 
+          - Human Physiology<br> 
+          - Plant Physiology<br> 
+          - Ecology and Environment<br><br>
+
+          Physics:<br> 
+          - Mechanics<br> 
+          - Thermodynamics<br> 
+          - Oscillations and Waves<br> 
+          - Electrodynamics<br> 
+          - Optics<br> 
+          - Modern Physics<br><br>
+
+          Chemistry:<br> 
+          - Physical Chemistry: Thermodynamics, Equilibrium, States of Matter<br> 
+          - Organic Chemistry: Hydrocarbons, Biomolecules, Environmental Chemistry<br> 
+          - Inorganic Chemistry: Periodic Table, p-block, d-block, Coordination Compounds`
+      },
+      "llb-judiciary": {
+        title: "LLB & Judiciary Syllabus",
+        content: `Legal Aptitude:<br> 
+          - Indian Constitution<br> 
+          - Law of Torts<br> 
+          - Law of Contracts<br> 
+          - Indian Penal Code<br><br>
+
+          General Knowledge:<br> 
+          - Indian History and Culture<br> 
+          - Geography and Environment<br> 
+          - Political Science<br> 
+          - Current Affairs<br><br>
+
+          English:<br> 
+          - Reading Comprehension<br> 
+          - Grammar & Vocabulary<br> 
+          - Sentence Correction<br><br>
+
+          Logical Reasoning:<br> 
+          - Analytical Reasoning<br> 
+          - Puzzles<br> 
+          - Series and Analogies`
+      },
+      "polytechnic": {
+        title: "Polytechnic Entrance Syllabus",
+        content: `Mathematics:<br> 
+          - Arithmetic (Percentages, Profit-Loss, Ratio)<br> 
+          - Algebra (Linear Equations, Polynomials)<br> 
+          - Geometry (Lines, Angles, Triangles)<br> 
+          - Trigonometry (Heights and Distances)<br><br>
+
+          Physics:<br> 
+          - Laws of Motion<br> 
+          - Work, Energy, and Power<br> 
+          - Electricity and Magnetism<br><br>
+
+          Chemistry:<br> 
+          - Acids, Bases, and Salts<br> 
+          - Periodic Table<br> 
+          - Chemical Reactions<br><br>
+
+          General Awareness:<br> 
+          - Science & Technology<br> 
+          - Current Affairs`
+      },
+      "ctet": {
+        title: "CTET Syllabus",
+        content: `Child Development and Pedagogy:<br> 
+          - Learning Theories<br> 
+          - Child-Centered Education<br> 
+          - Inclusive Education<br><br>
+
+          Language I & II:<br> 
+          - Reading Comprehension<br> 
+          - Grammar Usage<br> 
+          - Language Pedagogy<br><br>
+
+          Mathematics:<br> 
+          - Number System<br> 
+          - Measurement & Geometry<br> 
+          - Pedagogical Issues<br><br>
+
+          Environmental Studies:<br> 
+          - Food, Water, Travel, Shelter<br> 
+          - Science and Social Studies Integration`
+      },
+      "htet": {
+        title: "HTET Syllabus",
+        content: `Child Development & Pedagogy:<br> 
+          - Psychology of Learning<br> 
+          - Teaching Methods<br><br>
+
+          Language (Hindi/English):<br> 
+          - Comprehension<br> 
+          - Grammar<br><br>
+
+          Quantitative Aptitude:<br> 
+          - Numbers<br> 
+          - Simplification<br> 
+          - Averages<br><br>
+
+          General Studies:<br> 
+          - Haryana GK<br> 
+          - Current Events and Affairs`
+      },
+      "uptet": {
+        title: "UPTET Syllabus",
+        content: `Child Development:<br> 
+          - Learning Principles<br> 
+          - Inclusive Education<br><br>
+
+          Language I & II:<br> 
+          - Language Comprehension<br> 
+          - Pedagogy of Language Development<br><br>
+
+          Mathematics:<br> 
+          - Number Systems<br> 
+          - Algebra, Geometry<br><br>
+
+          Environmental Studies:<br> 
+          - Family and Friends<br> 
+          - Science & Social Studies`
+      },
+      "upsc": {
+        title: "UPSC Syllabus",
+        content: `Prelims:<br> 
+          - General Studies: History, Geography, Indian Polity, Economy, Environment, Science<br> 
+          - CSAT: Comprehension, Decision Making, Basic Numeracy<br><br>
+
+          Mains:<br> 
+          - Essay Writing<br> 
+          - General Studies I–IV (Indian Heritage, Governance, Tech, Ethics)<br> 
+          - Optional Subject (varies per candidate)`
+      },
+      "ssc": {
+        title: "SSC Syllabus",
+        content: `General Intelligence:<br> 
+          - Series, Analogy, Classification<br> 
+          - Coding-Decoding, Puzzles<br><br>
+
+          Quantitative Aptitude:<br> 
+          - Simplification, Averages<br> 
+          - Ratio, Time & Work, Geometry<br><br>
+
+          English:<br> 
+          - Grammar, Cloze Test<br> 
+          - Synonyms, Antonyms<br><br>
+
+          General Awareness:<br> 
+          - Indian History, Constitution<br> 
+          - Scientific Research, Current Affairs`
+      },
+      "bank-po-clerk": {
+        title: "Bank PO & Clerk Syllabus",
+        content: `Reasoning:<br> 
+          - Seating Arrangement<br> 
+          - Syllogism, Blood Relations, Puzzles<br><br>
+
+          Quantitative Aptitude:<br> 
+          - Number Series, Simplification<br> 
+          - Data Interpretation<br><br>
+
+          English:<br> 
+          - Reading Comprehension<br> 
+          - Para Jumbles, Error Spotting<br><br>
+
+          General Awareness:<br> 
+          - Banking Awareness<br> 
+          - Current Affairs, Static GK`
+      },
+      "gate": {
+        title: "GATE Syllabus",
+        content: `Engineering Mathematics:<br> 
+          - Linear Algebra, Calculus<br> 
+          - Probability, Differential Equations<br><br>
+
+          Technical Subjects (as per branch):<br> 
+          - Mechanical: SOM, Thermodynamics, Fluid Mechanics<br> 
+          - Electrical: Circuits, Machines, Power Systems<br> 
+          - Civil: Structures, Geotech, Transportation<br><br>
+
+          General Aptitude:<br> 
+          - Verbal Ability<br> 
+          - Numerical Ability`
+      },
+      "railway-alp": {
+        title: "Railway ALP Syllabus",
+        content: `Mathematics:<br> 
+          - Number System<br> 
+          - Ratio, Profit-Loss, Simple Interest<br><br>
+
+          General Intelligence:<br> 
+          - Analogies, Classification, Coding<br><br>
+
+          Basic Science:<br> 
+          - Physics: Motion, Light, Magnetism<br> 
+          - Chemistry: Matter, Chemical Reactions<br><br>
+
+          Technical Ability:<br> 
+          - Engineering Drawing<br> 
+          - Electrical and Mechanical Basics`
+      },
+      "ssc-je": {
+        title: "SSC JE Syllabus",
+        content: `General Intelligence:<br> 
+          - Verbal & Non-Verbal Reasoning<br><br>
+
+          General Awareness:<br> 
+          - Current Events<br> 
+          - Indian Geography and Economy<br><br>
+
+          Technical Subjects:<br> 
+          - Civil Engineering: RCC, Soil Mechanics<br> 
+          - Mechanical: Theory of Machines, Thermal Engineering<br> 
+          - Electrical: Circuit Theory, Machines, Measurement`
+      }
+    };
+
+    // Show modal
+    function showModal(courseId) {
+      const modal = document.getElementById('syllabus-modal');
+      const title = document.getElementById('modal-title');
+      const content = document.getElementById('modal-content');
+      const course = syllabi[courseId];
+      title.textContent = course.title;
+      content.innerHTML = course.content;
+      modal.style.display = 'flex';
+    }
+
+    // Hide modal
+    function hideModal() {
+      document.getElementById('syllabus-modal').style.display = 'none';
+    }
+
+    // Syllabus button listeners
+    document.querySelectorAll('.syllabus-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const courseId = button.parentElement.dataset.course;
+        showModal(courseId);
+      });
+    });
+
+    // Enroll button listeners
+    document.querySelectorAll('.enroll-now').forEach(button => {
+      button.addEventListener('click', () => {
+        alert('Enrollment coming soon!');
+      });
+    });
+
+    // Simulate login to show user profile (replace with actual login logic)
+    window.addEventListener('load', () => {
+      const userProfile = document.getElementById('user-profile');
+      const isLoggedIn = true; // Simulate logged-in state (replace with actual check)
+      if (isLoggedIn) {
+        userProfile.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

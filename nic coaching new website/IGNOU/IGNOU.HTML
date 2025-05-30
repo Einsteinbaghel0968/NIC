@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IGNOU Study Center - NIC Institute</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #222;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+    .nav-links a {
+      margin-left: 25px;
+      color: white;
+      position: relative;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #00c2ff;
+    }
+    .nav-links a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: #00c2ff;
+      width: 0%;
+      transition: 0.4s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .user-profile {
+      margin-left: 25px;
+      display: flex;
+      align-items: center;
+    }
+    .user-profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00c2ff;
+      transition: transform 0.3s ease;
+    }
+    .user-profile img:hover {
+      transform: scale(1.1);
+    }
+    .user-profile span {
+      margin-left: 10px;
+      font-weight: 500;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 30px;
+      margin: 20px;
+    }
+    .hero img.bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.5);
+    }
+    .hero-content {
+      z-index: 1;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+
+    /* Introduction Section */
+    .introduction {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .introduction img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .introduction h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .introduction p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    /* Assignment Section */
+    .assignments {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #e3f2fd;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .assignments img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .assignments h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .assignments h3 {
+      font-size: 1.5rem;
+      margin: 20px 0 10px;
+      color: #222;
+    }
+    .assignments p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .assignments ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+    .assignments ul li {
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .assignments ul li a {
+      color: #00c2ff;
+      font-weight: 500;
+    }
+    .assignments ul li a:hover {
+      text-decoration: underline;
+    }
+    .assignments ul li:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Student Zone Section */
+    .student-zone {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .student-zone img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .student-zone h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .student-zone ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+    .student-zone ul li {
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .student-zone ul li a {
+      color: #00c2ff;
+      font-weight: 500;
+    }
+    .student-zone ul li a:hover {
+      text-decoration: underline;
+    }
+    .student-zone ul li:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Video Section */
+    .video {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .video h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .video iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Affiliations Section */
+    .affiliations {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #e3f2fd;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .affiliations img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .affiliations h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .affiliations ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .affiliations ul li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    /* Office Section */
+    .office {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .office h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .office .office-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .office img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .office-details {
+      flex: 1;
+      min-width: 300px;
+    }
+    .office-details h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .contact-links a {
+      display: inline-block;
+      margin: 10px 5px;
+      color: #00c2ff;
+    }
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+    .social-links a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .social-links a:hover {
+      color: #00c2ff;
+    }
+
+    /* Map Section */
+    .map {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .map h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .map iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      background: #222;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+      border-radius: 0 0 15px 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .nav-links a {
+        margin: 10px;
+        font-size: 0.9rem;
+      }
+      .hero {
+        height: 50vh;
+      }
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .introduction img,
+      .assignments img,
+      .student-zone img,
+      .affiliations img {
+        max-width: 100%;
+      }
+      .assignments ul,
+      .student-zone ul {
+        grid-template-columns: 1fr;
+      }
+      .video iframe {
+        height: 300px;
+      }
+      .office-content {
+        flex-direction: column;
+      }
+      .office img {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<header class="navbar">
+    <a href="C:\Autodesk\WI\nic coaching new website\nic home page\NIC.html" class="logo">NIC Institute</a>
+    <nav class="nav-links">
+      <a href="C:\Autodesk\WI\nic coaching new website\nic home page\NIC.html" >Home</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\IGNOU\IGNOU.HTML"class="active">IGNOU Institute </a>
+      <a href="C:\Autodesk\WI\nic coaching new website\patrachar\patrachar.html">Patrachar Vidyalaya</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\hhps\hhps.html">Happy Holy School</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\computer education\computereducation.html">Computer Education</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\COURSES\COURSES.html">Courses</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\about nic\about nic.html">About NIC</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\JBT-BED-LLB\JBT-BED-LLB.html">J.B.T. | B.Ed | LLB</a>
+      <a href="C:\Autodesk\WI\nic coaching new website\CONTACT\contact.html">Contact</a>
+    </nav>
+      <a href="C:\Autodesk\WI\nic coaching new website\log-inpage\login.html" class="user-profile">
+        <img src="C:\Autodesk\WI\nic coaching new website\prfir.png" alt="User Profile">
+        <span>User</span>
+      </a>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="bg-image" src="C:\Autodesk\WI\nic coaching new website\IGNOU\OIP.jpg" alt="IGNOU Study Center">
+    <div class="hero-content">
+      <h1>IGNOU Study Center 07135D</h1>
+      <p>Empowering Education with Indira Gandhi National Open University</p>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="introduction">
+    <img src="C:\Autodesk\WI\nic coaching new website\IGNOU\240;240;294e2a8d5892dd51a3d917e3a7e390737cdfd052.jpg" alt="IGNOU University Campus">
+    <h2>About IGNOU University</h2>
+    <p>The Indira Gandhi National Open University (IGNOU), established by an Act of Parliament in 1985, has continuously striven to build an inclusive knowledge society through inclusive education. It has tried to increase the Gross Enrollment Ratio (GER) by offering high-quality teaching through the Open and Distance Learning (ODL) mode.</p>
+    <p><strong>Study Center:</strong> 07135D</p>
+  </section>
+
+  <!-- Assignment Section -->
+  <section class="assignments">
+    <img src="C:\Autodesk\WI\nic coaching new website\IGNOU\240;240;294e2a8d5892dd51a3d917e3a7e390737cdfd052.jpg" alt="Assignment Submission">
+    <h2>IGNOU Assignments</h2>
+    <p><strong>Assignment Submission Last Date:</strong> 29th & 30th March 2018</p>
+    <h3>Assignment Downloads (1st to 6th Sem)</h3>
+    <ul>
+      <li><a href="https://ignou.ac.in/assignments/eco-01.pdf" target="_blank">ECO-01 (1st Sem)</a></li>
+      <li><a href="https://ignou.ac.in/assignments/feg-02.pdf" target="_blank">FEG-02 (1st Sem)</a></li>
+      <li><a href="https://ignou.ac.in/assignments/eco-02.pdf" target="_blank">ECO-02 (2nd Sem)</a></li>
+      <li><a href="https://ignou.ac.in/assignments/sem-3.pdf" target="_blank">3rd Semester Assignments</a></li>
+      <li><a href="https://ignou.ac.in/assignments/sem-4.pdf" target="_blank">4th Semester Assignments</a></li>
+      <li><a href="https://ignou.ac.in/assignments/sem-5.pdf" target="_blank">5th Semester Assignments</a></li>
+      <li><a href="https://ignou.ac.in/assignments/sem-6.pdf" target="_blank">6th Semester Assignments</a></li>
+    </ul>
+    <h3>Assignment Submission</h3>
+    <ul>
+      <li><a href="https://ignou.ac.in/assignment-submission-form" target="_blank">Assignment Submission Form</a></li>
+    </ul>
+  </section>
+
+  <!-- Student Zone Section -->
+  <section class="student-zone">
+    <img src="C:\Autodesk\WI\nic coaching new website\IGNOU\240;240;294e2a8d5892dd51a3d917e3a7e390737cdfd052.jpg" alt="IGNOU Student Portal">
+    <h2>IGNOU Student Zone</h2>
+    <ul>
+      <li><a href="https://ignou.ac.in/form-download" target="_blank">Form Download</a></li>
+      <li><a href="https://ignou.ac.in/registration-details" target="_blank">Registration Details</a></li>
+      <li><a href="https://ignou.ac.in/online-re-registration" target="_blank">Online Re-Registration</a></li>
+      <li><a href="https://ignou.ac.in/assignment-marks" target="_blank">Assignment Marks</a></li>
+      <li><a href="https://ignou.ac.in/online-exam-fee-substitution" target="_blank">Online Exam Fee Substitution</a></li>
+      <li><a href="https://ignou.ac.in/exam-form-download" target="_blank">Exam Form Download</a></li>
+      <li><a href="https://ignou.ac.in/all-downloads" target="_blank">All Downloads of IGNOU</a></li>
+    </ul>
+  </section>
+
+  <!-- Video Section -->
+
+
+  <!-- Affiliations Section -->
+  <section class="affiliations">
+    <img src="C:\Autodesk\WI\nic coaching new website\niclogo_1.gif" alt="NIC Affiliations">
+    <h2>Institutional Highlights & Affiliations</h2>
+    <ul>
+      <li>Empanelled Coaching Institute of National Career Service Centre for SC/STs, Govt. of India, Ministry of Labour & Employment</li>
+      <li>Delhi Govt. Department of Social Welfare for SC, ST, OBC & EWS</li>
+      <li>Associated with IGNOU (Indira Gandhi National Open University), a Central University established by an Act of Parliament in 1985</li>
+      <li>Authorized Study Center of NIOS (National Institute of Open Schooling), Govt. of India, Ministry of HRD</li>
+      <li>Coaching for All Govt. Exams & Entrance Exams with Lifetime Green Card and Online/Offline Test Regular</li>
+      <li>Personal Attention with Small Batches (20-25 Students), Short Notes, Regular Class Tests, and Updated Study Material in Hindi & English</li>
+    </ul>
+    <p><strong>Why NIC is Different & Result-Oriented:</strong> We provide Current Affairs classes, magazines, and same-day doubt-clearing sessions to ensure your success.</p>
+    <p><strong>"L.U.C.K. - Labour Under Correct Knowledge, Buildup LUCK"</strong></p>
+  </section>
+
+
+
+  <!-- Map Section -->
+  <section class="map">
+    <h2>Find Us</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.191083714676!2d77.30314931508045!3d28.50350698246988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce0d6b7c07c7b%3A0x7c7b8b8e9c8e6e6e!2sBadarpur%2C%20New%20Delhi%2C%20Delhi%20110044%2C%20India!5e0!3m2!1sen!2sin!4v1698765432109!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>NIC Institute of Professional Studies, An ISO 9001:2015 Certified NGO Institute. © niccomputer.com</p>
+      <p>Visitors Count: 210223</p>
+    </div>
+  </footer>
+</body>
+</html>
