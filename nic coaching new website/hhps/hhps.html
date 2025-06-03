@@ -8,345 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background: #fff;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: #222;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-    .nav-links a {
-      margin-left: 25px;
-      color: white;
-      position: relative;
-      font-weight: 600;
-      padding-bottom: 5px;
-    }
-    .nav-links a.active,
-    .nav-links a:hover {
-      color: #00c2ff;
-    }
-    .nav-links a::after {
-      content: '';
-      display: block;
-      height: 2px;
-      background: #00c2ff;
-      width: 0;
-      transition: width 0.4s ease-in-out;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
- .user-profile {
-      margin-left: 25px;
-      display: flex;
-      align-items: center;
-    }
-    .user-profile img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #00c2ff;
-      transition: transform 0.3s ease;
-    }
-    .user-profile img:hover {
-      transform: scale(1.1);
-    }
-    .user-profile span {
-      margin-left: 10px;
-      font-weight: 500;
-      color: white;
-    }
-
-    /* Hero Section with Admission Banner */
-    .hero {
-      position: relative;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      border-radius: 30px;
-      margin: 20px;
-    }
-    .hero img.bg-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      filter: brightness(0.5);
-    }
-    .hero-content {
-      z-index: 1;
-      color: white;
-      padding: 0 20px;
-    }
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .hero-content .cta-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #00c2ff;
-      color: white;
-      border-radius: 5px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    .hero-content .cta-button:hover {
-      background: #0099cc;
-    }
-
-    /* Logo Section */
-    .logo-section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-      background: #f5f5f5;
-      border-radius: 15px;
-    }
-    .logo-section img {
-      max-width: 200px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Gallery Sections (Competitions & Extracurricular) with Slider */
-    .gallery {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #e3f2fd;
-      border-radius: 15px;
-      text-align: center;
-    }
-    .gallery h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #222;
-    }
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .slider .slides {
-      position: relative;
-      width: 100%;
-      height: 400px;
-    }
-    .slider .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .slider .slide.active {
-      opacity: 1;
-    }
-    .slider .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .slider .slide .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 10px;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-    .slider .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .slider .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #bbb;
-      border-radius: 50%;
-      margin: 0 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .slider .dot.active {
-      background: #00c2ff;
-    }
-
-    /* Office Section */
-    .office {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f5f5f5;
-      border-radius: 15px;
-      text-align: center;
-    }
-    .office h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #222;
-    }
-    .office .office-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-    .office img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .office-details {
-      flex: 1;
-      min-width: 300px;
-    }
-    .office-details h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #222;
-    }
-    .contact-links a {
-      display: inline-block;
-      margin: 10px 5px;
-      color: #00c2ff;
-    }
-    .contact-links a:hover {
-      text-decoration: underline;
-    }
-    .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: #333;
-    }
-    .social-links a:hover {
-      color: #00c2ff;
-    }
-
-    /* Map Section */
-    .map {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-    }
-    .map h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #222;
-    }
-    .map iframe {
-      width: 100%;
-      height: 400px;
-      border-radius: 15px;
-      border: none;
-    }
-
-    /* Footer */
-    .footer {
-      padding: 20px;
-      background: #222;
-      color: white;
-      text-align: center;
-      font-size: 0.9rem;
-      border-radius: 0 0 15px 15px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        padding: 20px;
-      }
-      .nav-links a {
-        margin: 10px;
-        font-size: 0.9rem;
-      }
-      .hero {
-        height: 50vh;
-      }
-      .hero-content h1 {
-        font-size: 1.8rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      .logo-section img {
-        max-width: 150px;
-      }
-      .slider .slides {
-        height: 300px;
-      }
-      .office-content {
-        flex-direction: column;
-      }
-      .office img {
-        width: 100%;
-        height: 150px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Navbar -->
@@ -356,9 +18,9 @@
       <a href="../nic home page/NIC.html" >Home</a>
       <a href="../IGNOU/IGNOU.HTML">IGNOU Institute</a>
       <a href="..\patrachar\patrachar.html">Patrachar Vidyalaya</a>
-      <a href="..\hhps\hhps.html">Happy Holy School</a>
+      <a href="..\hhps\hhps.html" class="active">Happy Holy School</a>
       <a href="..\computer education\computereducation.html">Computer Education</a>
-      <a href="..\about nic\about nic.html"class="active">About NIC</a>
+      <a href="..\about nic\about nic.html">About NIC</a>
       <a href="..\JBT-BED-LLB\JBT-BED-LLB.html">J.B.T. | B.Ed | LLB</a>
       <a href="..\CONTACT\contact.html">Contact</a>
       <a href="..\COURSES\COURSES.html">Courses</a>
@@ -367,17 +29,17 @@
 
   <!-- Hero Section with Admission Banner -->
   <section class="hero">
-    <img class="bg-image" src="C:\Autodesk\WI\nic coaching new website\hhps\a poster of admission and it have contact.jpeg" alt="Admission Open Banner">
+    <img class="bg-image" src="a poster of admission and it have contact.jpeg" alt="Admission Open Banner">
     <div class="hero-content">
       <h1>Happy Holy Public School</h1>
       <p>Admission Open for the New Academic Session!</p>
-      <a href="C:\Autodesk\WI\nic coaching new website\CONTACT\contact.html" class="cta-button">Apply Now</a>
+      <a href="..\CONTACT\contact.html" class="cta-button">Apply Now</a>
     </div>
   </section>
 
   <!-- Logo Section -->
   <section class="logo-section">
-    <img src="C:\Autodesk\WI\nic coaching new website\hhps\logo hhps.jpg" alt="Happy Holy Public School Logo">
+    <img src="logo hhps.jpg" alt="Happy Holy Public School Logo">
   </section>
 
   <!-- Competitions Section with Slider -->
@@ -386,27 +48,27 @@
     <div class="slider" id="competition-slider">
       <div class="slides">
         <div class="slide">
-          <img src="C:\Autodesk\WI\nic coaching new website\hhps\drawing competition of small childrens (students making drawing).jpg" alt="Drawing Competition">
+          <img src="drawing competition of small childrens (students making drawing).jpg" alt="Drawing Competition">
           <div class="caption">Drawing Competition of Small Children</div>
         </div>
         <div class="slide">
-          <img src="C:\Autodesk\WI\nic coaching new website\hhps\small childrean have drawings on their hands.jpg" alt="Drawing Competition">
+          <img src="small childrean have drawings on their hands.jpg" alt="Drawing Competition">
           <div class="caption">Small Children with Drawings on Hands</div>
         </div>
         <div class="slide">
-          <img src="C:\Autodesk\WI\nic coaching new website\hhps\student essay competition part  3.jpg" alt="Essay Competition">
+          <img src="student essay competition part  3.jpg" alt="Essay Competition">
           <div class="caption">Student Essay Competition</div>
         </div>
         <div class="slide">
-          <img src="C:\Autodesk\WI\nic coaching new website\hhps\students essay competition  part 3.jpg" alt="Essay Competition">
+          <img src="students essay competition  part 3.jpg" alt="Essay Competition">
           <div class="caption">Students Essay Competition</div>
         </div>
         <div class="slide">
-          <img src="C:\Autodesk\WI\nic coaching new website\hhps\kite making competition.jpg" alt="Kite Making Competition">
+          <img src="kite making competition.jpg" alt="Kite Making Competition">
           <div class="caption">Kite Making Competition</div>
         </div>
         <div class="slide">
-          <img src="C:\Autodesk\WI\nic coaching new website\hhps\esaay competition.JPG" alt="Essay Competition">
+          <img src="esaay competition.JPG" alt="Essay Competition">
           <div class="caption">Essay Competition</div>
         </div>
       </div>
@@ -427,15 +89,15 @@
     <div class="slider" id="extracurricular-slider">
       <div class="slides">
         <div class="slide">
-          <img src="./a child have a 3d art.jpg" alt="3D Art">
+          <img src="a child have a 3d art.jpg" alt="3D Art">
           <div class="caption">Child with 3D Art</div>
         </div>
         <div class="slide">
-          <img src="./students around a rangoli made by them.jpg" alt="Rangoli Activity">
+          <img src="students around a rangoli made by them.jpg" alt="Rangoli Activity">
           <div class="caption">Students Around Their Rangoli</div>
         </div>
         <div class="slide">
-          <img src="./students making thumb drawing.jpg" alt="Thumb Drawing">
+          <img src="students making thumb drawing.jpg" alt="Thumb Drawing">
           <div class="caption">Students Making Thumb Drawings</div>
         </div>
       </div>
@@ -449,17 +111,14 @@
 
   <!-- Office Section -->
   <section class="office">
-    <h2>Contact Us</h2>
+    <h2>Our Office</h2>
     <div class="office-content">
-      <img src="C:\Autodesk\WI\nic coaching new website\niclogo_1.gif" alt="NIC Institute Office">
+      <img src="../niclogo_1.gif" alt="NIC Institute Office">
       <div class="office-details">
         <h3>Office Address</h3>
-        <p>Naresh Bhardwaj<br>(Advocate, Supreme & High Court)<br>(Executive Member-CTIS)<br>(Coordinator, IGNOU)<br>(B.Com., LLB, LLM, MBA)</p>
-        <p>NIC Institute, Laxmi Tower, Plot No-4, 81/1, Service Road, Opp. Badarpur Bus Terminal, near Old Prakesh Petrol Pump, Badarpur, New Delhi-110044</p>
-        <p>85, NIC Computer, NIC Building, Gali No-14, Main Market, Molar Band, on Jait Pur Road, Badar Pur, New Delhi 110044, India.</p>
+        <p>NIC Institute, Laxmi Tower, Plot No-4, 81/1, Service Road, Opp. Badarpur Bus Terminal, near Old Prakesh Petrol Pump, Badarpur, New Delhi 110044</p>
         <div class="contact-links">
           <p><strong>Contact:</strong> <a href="tel:+919582752030">+91 9582752030</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+911129892649">+91-11-29892649</a></p>
           <p><strong>WhatsApp:</strong> <a href="https://wa.me/919582752030" target="_blank">Message Us</a></p>
           <p><strong>Emails:</strong><br>
             <a href="mailto:niccomputer@gmail.com">niccomputer@gmail.com</a><br>
@@ -467,9 +126,9 @@
             <a href="mailto:info@niccomputer.com">info@niccomputer.com</a>
           </p>
           <div class="social-links">
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://blog.niccomputer.com" target="_blank"><i class="fas fa-blog"></i></a>
+            <a href="https://www.youtube.com/channel/UCRC8fLpxJ6PP6HNQg5h4-fQ/feed" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/niccomputer" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://nicindia.blogspot.com/?zx=f96ebcea1dd4fe0" target="_blank"><i class="fas fa-blog"></i></a>
           </div>
         </div>
       </div>
