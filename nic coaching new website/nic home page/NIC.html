@@ -94,13 +94,14 @@
 
   <!-- Testimonials -->
   <section class="testimonials" id="testimonials">
-    <h2>Student Testimonials</h2>
-    <div class="testimonial-carousel">
-      <p class="testimonial active">"The best place for SSC & Banking coaching!" - Rajesh</p>
-      <p class="testimonial">"I loved the environment and quality of teaching." - Priya</p>
-      <p class="testimonial">"Great IT course and job placement support!" - Amit</p>
-    </div>
-  </section>
+  <h2>Student Testimonials</h2>
+  <div class="testimonial-carousel">
+    <p class="testimonial active">"The best place for SSC & Banking coaching!" - Rajesh</p>
+    <p class="testimonial">"I loved the environment and quality of teaching." - Priya</p>
+    <p class="testimonial">"Great IT course and job placement support!" - Amit</p>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -112,6 +113,8 @@
 
  <!-- JavaScript for Auto-Slider -->
   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // === Achievement Sliders ===
     document.querySelectorAll('.achievement-slider-column').forEach(column => {
       const slides = column.querySelectorAll('.multi-slide');
       let currentIndex = 0;
@@ -121,12 +124,34 @@
         slides[index].classList.add('active');
       };
 
+      showSlide(currentIndex); // Show first slide initially
+
       // Auto-scroll every 3 seconds
       setInterval(() => {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
-      }, 3000); // 3000ms = 3 seconds
+      }, 3000);
     });
-  </script>
+
+    // === Testimonial Slider ===
+    const testimonialSlides = document.querySelectorAll(".testimonial");
+    let testimonialIndex = 0;
+
+    const showTestimonial = (index) => {
+      testimonialSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    };
+
+    showTestimonial(testimonialIndex); // Show first testimonial initially
+
+    // Auto-scroll every 3 seconds
+    setInterval(() => {
+      testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+      showTestimonial(testimonialIndex);
+    }, 3000);
+  });
+</script>
+
 </body>
 </html>

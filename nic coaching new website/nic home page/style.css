@@ -237,32 +237,32 @@
     font-weight: 600;
   }
   
-  /* Testimonials */
-  .testimonials {
-    padding: 60px 20px;
-    background: #e3f2fd;
-    text-align: center;
-    border-radius: 15px;
-    max-width: 900px;
-    margin: 0 auto 60px;
-  }
-  .testimonials h2 {
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    color: #222;
-  }
-  .testimonial-carousel p {
-    display: none;
-    font-size: 1.2em;
-    max-width: 700px;
-    margin: 0 auto;
-    font-style: italic;
-    color: #555;
-  }
-  .testimonial.active {
-    display: block;
-  }
-  
+/* Testimonials */
+.testimonials {
+  padding: 60px 20px;
+  background: #e3f2fd;
+  text-align: center;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+.testimonials h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #222;
+}
+.testimonial {
+  display: none;
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto;
+  font-style: italic;
+  color: #555;
+}
+.testimonial.active {
+  display: block;
+}
+
   /* Footer */
   .footer {
     padding: 20px;
