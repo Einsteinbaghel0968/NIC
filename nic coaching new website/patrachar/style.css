@@ -197,7 +197,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* Affiliations Section */
+  /* Affiliations Section 
   .affiliations {
     max-width: 1200px;
     margin: 40px auto;
@@ -220,7 +220,7 @@
     margin-bottom: 10px;
   }
 
-  /* Office Section */
+   Office Section 
   .office {
     max-width: 1200px;
     margin: 40px auto;
@@ -274,7 +274,7 @@
     color: #00c2ff;
   }
 
-  /* Map Section */
+   Map Section 
   .map {
     max-width: 1200px;
     margin: 40px auto;
@@ -291,16 +291,62 @@
     height: 400px;
     border-radius: 15px;
     border: none;
-  }
+  }*/
 
   /* Footer */
   .footer {
-    padding: 20px;
+    padding: 10px;
     background: #222;
     color: white;
     text-align: center;
     font-size: 0.9rem;
-    border-radius: 0 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+    /*border-radius: 0 0 15px 15px; */
+  }
+  .footer .outer{
+    display: flex;
+    justify-content: space-evenly;
+    /* border-top: 3px solid white; */
+    /* flex-direction: column; */
+  }
+  .footer .head{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .contact-links{
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-links a {
+    display: inline-block;
+    margin: 10px 5px;
+    color: #00c2ff;
+  }
+  .contact-links a:hover {
+    text-decoration: underline;
+  }
+  .footer-content .horizontal{
+    width: 100vw;
+    border: 1px solid white;
+    margin-bottom: 1em;
+  }
+   .social-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   }
+   .social-links a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  .social-links a:hover {
+    color: #00c2ff;
   }
 
   /* Responsive */
