@@ -30,11 +30,46 @@
   </nav>
 </header>
 
-<!-- Testimonial Page Content -->
 <section class="testimonial-page">
-  <div class="container">
+<div class="container">
+    <h1>Student Testimonials</h1>
+
+    <div class="filter-container">
+      <label for="examFilter">Filter by Exam:</label>
+      <select id="examFilter">
+        <option value="all">All</option>
+        <option value="upsc">UPSC</option>
+        <option value="neet">NEET</option>
+        <option value="jee">JEE</option>
+      </select>
+    </div>
+
+    <div class="testimonial-grid" id="testimonialGrid">
+      <!-- Sample Text Testimonial -->
+      <div class="testimonial-card" data-exam="upsc">
+        <img src="images/rahul.jpg" alt="Rahul">
+        <h3>Rahul Sharma</h3>
+        <p>"The coaching and mentoring I got here helped me clear UPSC on my first attempt!"</p>
+        <span class="badge">UPSC</span>
+      </div>
+
+      <!-- Video Testimonial -->
+      <div class="testimonial-card" data-exam="neet">
+        <iframe src="https://www.youtube.com/embed/abc123xyz" frameborder="0" allowfullscreen></iframe>
+        <h3>Sneha Verma</h3>
+        <p>"Thanks to the faculty, I secured AIR 52 in NEET 2024."</p>
+        <span class="badge">NEET</span>
+      </div>
+
+      <!-- Add more testimonials here -->
+    </div>
+  </div>
+</section>
+<!-- Testimonial Page Content -->
+<!-- <section class="testimonial-page">
+  <div class="container"> -->
     <!-- Sidebar with Filters -->
-    <div class="sidebar">
+    <!-- <div class="sidebar">
       <h3>Filters</h3>
       <div class="filter-group">
         <h4>Course Type</h4>
@@ -49,20 +84,20 @@
         <label><input type="checkbox" name="exam" value="neet"> NEET</label>
         <label><input type="checkbox" name="exam" value="ssc"> SSC</label>
         <label><input type="checkbox" name="exam" value="banking"> Banking</label>
-      </div>
+      </div> -->
       <!-- <div class="filter-group">
         <h4>Target Years</h4>
         <label><input type="checkbox" name="year" value="2025"> 2025</label>
         <label><input type="checkbox" name="year" value="2024"> 2024</label>
       </div> --> 
-      <button>Apply</button>
-    </div>
+      <!-- <button>Apply</button>
+    </div> -->
 
     <!-- Testimonial List -->
-    <div class="testimonial-list">
-      <h2>NIC Institute Student Testimonials</h2>
+    <!-- <div class="testimonial-list">
+      <h2>NIC Institute Student Testimonials</h2> -->
       <!-- Testimonial Card 1 -->
-      <div class="testimonial-card">
+      <!-- <div class="testimonial-card">
         <div class="thumbnail">
           <img src="C:\Autodesk\WI\nic coaching new website\NIC ACHEIVMENT\aakanksha kaushal iit.jpg" alt="Student 1">
         </div>
@@ -71,9 +106,9 @@
           <p>"I am very happy with the coaching at NIC Institute. It helped me achieve my goals."</p>
           <a href="#">Show More</a>
         </div>
-      </div>
+      </div> -->
       <!-- Testimonial Card 2 -->
-      <div class="testimonial-card">
+      <!-- <div class="testimonial-card">
         <div class="thumbnail">
           <img src="C:\Autodesk\WI\nic coaching new website\NIC ACHEIVMENT\ANJALI KUMARI NEET.jpg" alt="Student 2">
         </div>
@@ -82,11 +117,11 @@
           <p>"The faculty at NIC Institute is excellent. They provide personalized attention to each student."</p>
           <a href="#">Show More</a>
         </div>
-      </div>
+      </div> -->
       <!-- Add more testimonial cards as needed -->
-    </div>
+    <!-- </div>
   </div>
-</section>
+</section> -->
 
 <!-- Footer (same as home page) -->
 <footer class="footer">
@@ -121,6 +156,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 
 </body>
 </html>
