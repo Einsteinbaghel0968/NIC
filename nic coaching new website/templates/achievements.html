@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NIC Institute - Testimonials</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div id="navbar-placeholder" style="height: 10vh"></div>
+    <main>
+      <section class="testimonial-page">
+        <div class="container">
+          <h1>Student Testimonials</h1>
+
+          <div class="filter-container">
+            <label for="examFilter">Filter by Exam:</label>
+            <select id="examFilter">
+              <option value="all">All</option>
+              <option value="upsc">UPSC</option>
+              <option value="neet">NEET</option>
+              <option value="jee">JEE</option>
+            </select>
+          </div>
+
+          <div class="testimonial-grid" id="testimonialGrid">
+            <!-- Sample Text Testimonial -->
+            <div class="testimonial-card" data-exam="upsc">
+              <img src="images/rahul.jpg" alt="Rahul" />
+              <h3>Rahul Sharma</h3>
+              <p>
+                "The coaching and mentoring I got here helped me clear UPSC on
+                my first attempt!"
+              </p>
+              <span class="badge">UPSC</span>
+            </div>
+
+            <!-- Video Testimonial -->
+            <div class="testimonial-card" data-exam="neet">
+              <iframe
+                src="https://www.youtube.com/embed/abc123xyz"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+              <h3>Sneha Verma</h3>
+              <p>"Thanks to the faculty, I secured AIR 52 in NEET 2024."</p>
+              <span class="badge">NEET</span>
+            </div>
+
+            <!-- Add more testimonials here -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../static/script.js"></script>
+  </body>
+</html>
