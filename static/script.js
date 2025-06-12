@@ -1,13 +1,22 @@
 // === NAVBAR TOGGLE ===
+// function openNav() {
+//   let links = document.getElementById('nav-links');
+//   links.style.display = 'flex';
+//   document.querySelector('.menu-toggle').style.display = 'none';
+// }
+// function closeNav() {
+//   let links = document.getElementById('nav-links');
+//   links.style.display = 'none';
+//   document.querySelector('.menu-toggle').style.display = 'flex';
+// }
+
 function openNav() {
-  let links = document.getElementById('nav-links');
-  links.style.display = 'flex';
-  document.querySelector('.menu-toggle').style.display = 'none';
+  document.getElementById("mySidepanel").style.width = "250px";
 }
+
+/* Set the width of the sidebar to 0 (hide it) */
 function closeNav() {
-  let links = document.getElementById('nav-links');
-  links.style.display = 'none';
-  document.querySelector('.menu-toggle').style.display = 'flex';
+  document.getElementById("mySidepanel").style.width = "0";
 }
 
 // === GLOBAL SLIDESHOW VARIABLES ===
