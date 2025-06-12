@@ -1,106 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Happy Holy Public School - NIC Institute</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../static/style.css">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Holy Public School - NIC Institute</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
     <div id="navbar-placeholder" style="height: 10vh"></div>
     <main>
-        <section class="hero">
-    <img class="bg-image" src="../static/img/a poster of admission and it have contact.jpeg" alt="Admission Open Banner">
-    <div class="hero-content">
-      <h1>Happy Holy Public School</h1>
-      <p>Admission Open for the New Academic Session!</p>
-      <a href="contact.html" class="cta-button">Apply Now</a>
-    </div>
-  </section>
+      <section class="hero">
+        <img
+          class="bg-image"
+          src="../static/img/a poster of admission and it have contact.jpeg"
+          alt="Admission Open Banner"
+        />
+        <div class="hero-content">
+          <h1>Happy Holy Public School</h1>
+          <p>Admission Open for the New Academic Session!</p>
+          <a href="contact.html" class="cta-button">Apply Now</a>
+        </div>
+      </section>
 
-  <!-- Logo Section -->
-  <section class="logo-section">
-    <img src="../static/img/logo hhps.jpg" alt="Happy Holy Public School Logo">
-  </section>
+      <!-- Logo Section -->
+      <section class="logo-section">
+        <img
+          src="../static/img/logo hhps.jpg"
+          alt="Happy Holy Public School Logo"
+        />
+      </section>
 
-  <!-- Competitions Section with Slider -->
-  <section class="gallery">
-    <h2>Competitions at HHPS</h2>
-    <div class="slider" id="competition-slider">
-      <div class="slides">
-        <div class="slide">
-          <img src="../static/img/drawing competition of small childrens (students making drawing).jpg" alt="Drawing Competition">
-          <div class="caption">Drawing Competition of Small Children</div>
+      <!-- Competitions Section with Slider -->
+      <section class="gallery">
+        <h2>Competitions at HHPS</h2>
+        <div class="slider" id="competition-slider">
+          <div class="slides">
+            <div class="slide">
+              <img
+                src="../static/img/drawing competition of small childrens (students making drawing).jpg"
+                alt="Drawing Competition"
+              />
+              <div class="caption">Drawing Competition of Small Children</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/small childrean have drawings on their hands.jpg"
+                alt="Drawing Competition"
+              />
+              <div class="caption">Small Children with Drawings on Hands</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/student essay competition part  3.jpg"
+                alt="Essay Competition"
+              />
+              <div class="caption">Student Essay Competition</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/students essay competition  part 3.jpg"
+                alt="Essay Competition"
+              />
+              <div class="caption">Students Essay Competition</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/kite making competition.jpg"
+                alt="Kite Making Competition"
+              />
+              <div class="caption">Kite Making Competition</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/esaay competition.JPG"
+                alt="Essay Competition"
+              />
+              <div class="caption">Essay Competition</div>
+            </div>
+          </div>
+          <div class="dots">
+            <span
+              class="dot"
+              onclick="currentSlide('competition-slider', 0)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('competition-slider', 1)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('competition-slider', 2)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('competition-slider', 3)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('competition-slider', 4)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('competition-slider', 5)"
+            ></span>
+          </div>
         </div>
-        <div class="slide">
-          <img src="../static/img/small childrean have drawings on their hands.jpg" alt="Drawing Competition">
-          <div class="caption">Small Children with Drawings on Hands</div>
-        </div>
-        <div class="slide">
-          <img src="../static/img/student essay competition part  3.jpg" alt="Essay Competition">
-          <div class="caption">Student Essay Competition</div>
-        </div>
-        <div class="slide">
-          <img src="../static/img/students essay competition  part 3.jpg" alt="Essay Competition">
-          <div class="caption">Students Essay Competition</div>
-        </div>
-        <div class="slide">
-          <img src="../static/img/kite making competition.jpg" alt="Kite Making Competition">
-          <div class="caption">Kite Making Competition</div>
-        </div>
-        <div class="slide">
-          <img src="../static/img/esaay competition.JPG" alt="Essay Competition">
-          <div class="caption">Essay Competition</div>
-        </div>
-      </div>
-      <div class="dots">
-        <span class="dot" onclick="currentSlide('competition-slider', 0)"></span>
-        <span class="dot" onclick="currentSlide('competition-slider', 1)"></span>
-        <span class="dot" onclick="currentSlide('competition-slider', 2)"></span>
-        <span class="dot" onclick="currentSlide('competition-slider', 3)"></span>
-        <span class="dot" onclick="currentSlide('competition-slider', 4)"></span>
-        <span class="dot" onclick="currentSlide('competition-slider', 5)"></span>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Extracurricular Activities Section with Slider -->
-  <section class="gallery">
-    <h2>Extracurricular Activities at HHPS</h2>
-    <div class="slider" id="extracurricular-slider">
-      <div class="slides">
-        <div class="slide">
-          <img src="../static/img/a child have a 3d art.jpg" alt="3D Art">
-          <div class="caption">Child with 3D Art</div>
+      <!-- Extracurricular Activities Section with Slider -->
+      <section class="gallery">
+        <h2>Extracurricular Activities at HHPS</h2>
+        <div class="slider" id="extracurricular-slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="../static/img/a child have a 3d art.jpg" alt="3D Art" />
+              <div class="caption">Child with 3D Art</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/students around a rangoli made by them.jpg"
+                alt="Rangoli Activity"
+              />
+              <div class="caption">Students Around Their Rangoli</div>
+            </div>
+            <div class="slide">
+              <img
+                src="../static/img/students making thumb drawing.jpg"
+                alt="Thumb Drawing"
+              />
+              <div class="caption">Students Making Thumb Drawings</div>
+            </div>
+          </div>
+          <div class="dots">
+            <span
+              class="dot"
+              onclick="currentSlide('extracurricular-slider', 0)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('extracurricular-slider', 1)"
+            ></span>
+            <span
+              class="dot"
+              onclick="currentSlide('extracurricular-slider', 2)"
+            ></span>
+          </div>
         </div>
-        <div class="slide">
-          <img src="../static/img/students around a rangoli made by them.jpg" alt="Rangoli Activity">
-          <div class="caption">Students Around Their Rangoli</div>
-        </div>
-        <div class="slide">
-          <img src="../static/img/students making thumb drawing.jpg" alt="Thumb Drawing">
-          <div class="caption">Students Making Thumb Drawings</div>
-        </div>
-      </div>
-      <div class="dots">
-        <span class="dot" onclick="currentSlide('extracurricular-slider', 0)"></span>
-        <span class="dot" onclick="currentSlide('extracurricular-slider', 1)"></span>
-        <span class="dot" onclick="currentSlide('extracurricular-slider', 2)"></span>
-      </div>
-    </div>
-  </section>
-  <!-- Map Section  -->
-  <section class="map">
-    <h2>Find Us</h2>
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.2578269854075!2d77.324033075496!3d28.501317775736617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce6fc023ffc01%3A0x7df3b3584345baef!2sHappy%20Holy%20Public%20School%20(Govt.%20Recognised)!5e1!3m2!1sen!2sin!4v1748280378583!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
-
+      </section>
+      <!-- Map Section  -->
+      <section class="map">
+        <h2>Find Us</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.2578269854075!2d77.324033075496!3d28.501317775736617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce6fc023ffc01%3A0x7df3b3584345baef!2sHappy%20Holy%20Public%20School%20(Govt.%20Recognised)!5e1!3m2!1sen!2sin!4v1748280378583!5m2!1sen!2sin"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
     </main>
     <div id="footer-placeholder"></div>
     <script src="../static/script.js"></script>
-</body>
+  </body>
 </html>
