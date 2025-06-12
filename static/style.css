@@ -4,12 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   background: #fff;
   color: #333;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -34,7 +35,7 @@ a {
   padding: 10px 20px;
 }
 .menu-toggle {
-  display: flex;
+  display: flex;  
   font-size: 26px;
   cursor: pointer;
   color: white;
@@ -50,12 +51,10 @@ a {
   gap: 1em;
   background: #242323;
   color: white;
-  /* transition: all 0.2s ease-in-out; */
-  /* position: sticky; */
+
 }
 .nav-links .closebtn {
   font-size: 2em;
-  /* padding: 4px; */
 }
 .nav-links a {
   color: white;
@@ -66,11 +65,6 @@ a {
 .nav-links a:hover,
 .closebtn:hover {
   color: #00c2ff;
-}
-
-main {
-  width: 100%;
-  /* margin-top: 10%; */
 }
 
 /* Slideshow container */
@@ -176,7 +170,7 @@ main {
   text-align: center;
   border-radius: 15px;
   max-width: 1200px;
-  margin: 0 auto 60px;
+  margin: 20px 60px;
 }
 .courses h2 {
   margin-bottom: 30px;
@@ -189,7 +183,7 @@ main {
   justify-content: center;
   gap: 30px;
 }
-.course {
+.courses .course {
   width: 250px;
   background: white;
   border-radius: 10px;
@@ -256,7 +250,6 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
   z-index: 0;
   filter: brightness(0.5);
 }
@@ -762,6 +755,55 @@ Map Section
   .center a:hover {
     text-decoration: underline;
   }
+
+  .feedback{
+    padding: 1em;
+  }
+  .feedback-form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .feedback-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .feedback-form label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .feedback-form button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+    }
+
 /* courses page */
  /* Category Section */
   .category {
