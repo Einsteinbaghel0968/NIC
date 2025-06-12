@@ -22,6 +22,7 @@ a {
   height: 10%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: #222;
   color: white;
   position: fixed;
@@ -34,6 +35,10 @@ a {
   padding: 10px 20px;
 }
 .sidepanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   height: 100%; /* Specify a height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
@@ -72,9 +77,10 @@ a {
 
 /* Style the button that is used to open the sidepanel */
 .openbtn {
-  font-size: 20px;
+  height: 100%;
+  font-size: 25px;
   cursor: pointer;
-  background-color: #111;
+  background-color: #222;
   color: white;
   padding: 10px 15px;
   border: none;
