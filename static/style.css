@@ -555,7 +555,7 @@ a {
   .slider .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
     display: block;
   }
   .slider .slide .caption {
@@ -1054,7 +1054,7 @@ select {
   display: flex;
   flex-direction: column;
 }
-.contact-links a {
+.footer a {
   display: inline-block;
   margin: 10px 5px;
   color: #00c2ff;
