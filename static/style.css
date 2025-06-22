@@ -502,6 +502,12 @@ a {
   max-width: 90%;
   margin: auto;
 }
+.bosse-links h1{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
 .bosse-links ul {
   list-style: none;
   padding: 0;
