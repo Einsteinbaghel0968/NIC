@@ -1,4 +1,4 @@
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,7 +17,7 @@ a {
   color: inherit;
 }
 /* Navbar */
- .navbar {
+.navbar {
   width: 100%;
   height: 10%;
   display: flex;
@@ -295,17 +295,17 @@ a {
   font-size: 1.2rem;
 }
 .hero-content .cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #00c2ff;
-    color: white;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background 0.3s;
-  }
-  .hero-content .cta-button:hover {
-    background: #0099cc;
-  }
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00c2ff;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.hero-content .cta-button:hover {
+  background: #0099cc;
+}
 /* ========================================== ignou page========================================= */
 /* Introduction Section */
 .introduction {
@@ -494,421 +494,456 @@ a {
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+/* bosse links */
+.bosse-links {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 90%;
+  margin: auto;
+}
+.bosse-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bosse-links li {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.bosse-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+.bosse-links a:hover {
+  color: #007bff;
+}
+.bosse-links i {
+  margin-right: 8px;
+  color: #007bff;
+}
 
 /*=================================== happy holy school ===============================*/
-  /* Logo Section */
-  .logo-section {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-    background: #f5f5f5;
-    border-radius: 15px;
-  }
-  .logo-section img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+/* Logo Section */
+.logo-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+.logo-section img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  /* Gallery Sections (Competitions & Extracurricular) with Slider */
-  .gallery {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #e3f2fd;
-    border-radius: 15px;
-    text-align: center;
-  }
-  .gallery h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  .slider {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  .slider .slides {
-    position: relative;
-    width: 100%;
-    height: 400px;
-  }
-  .slider .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .slider .slide.active {
-    opacity: 1;
-  }
-  .slider .slide img {
-    width: 100%;
-    height: 100%;
-    /* object-fit: cover; */
-    display: block;
-  }
-  .slider .slide .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 10px;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .slider .dots {
-    text-align: center;
-    margin-top: 10px;
-  }
-  .slider .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #bbb;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  .slider .dot.active {
-    background: #00c2ff;
-  }
+/* Gallery Sections (Competitions & Extracurricular) with Slider */
+.gallery {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #e3f2fd;
+  border-radius: 15px;
+  text-align: center;
+}
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.slider .slides {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+.slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.slider .slide.active {
+  opacity: 1;
+}
+.slider .slide img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  display: block;
+}
+.slider .slide .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.slider .dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.slider .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.slider .dot.active {
+  background: #00c2ff;
+}
 
-Map Section 
-  .map {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-  }
-  .map h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  .map iframe {
-    width: 100%;
-    height: 400px;
-    padding: 1em;
-    border-radius: 50px;
-    border: none;
-  }
+Map Section .map {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+.map h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+.map iframe {
+  width: 100%;
+  height: 400px;
+  padding: 1em;
+  border-radius: 50px;
+  border: none;
+}
 
 /*==================================== computer education =========================*/
 
 /* Course Section */
-  .course {
-    /* border: 1px solid red; */
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f5f5f5;
-    border-radius: 15px;
-  }
-  .course h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-    text-align: center;
-  }
-  .course h3 {
-    font-size: 1.5rem;
-    margin: 20px 0 10px;
-    color: #222;
-  }
-  .course p, .course ul {
-    margin-bottom: 15px;
-    font-size: 1rem;
-  }
-  .course ul {
-    list-style: disc;
-    margin-left: 20px;
-  }
+.course {
+  /* border: 1px solid red; */
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+.course h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+.course h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  color: #222;
+}
+.course p,
+.course ul {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+.course ul {
+  list-style: disc;
+  margin-left: 20px;
+}
 
-  /* Gallery Section */
-  .gallery {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-  }
-  .gallery h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  .gallery-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+/* Gallery Section */
+.gallery {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 /*========================================== about page ========================================*/
 /* About Section */
-  .about {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f5f5f5;
-    border-radius: 15px;
-  }
-  .about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-    text-align: center;
-  }
-  .about p {
-    margin-bottom: 15px;
-    font-size: 1rem;
-  }
+.about {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+.about p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
 /* Affiliations Section */
-  .affiliations {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #e3f2fd;
-    border-radius: 15px;
-    text-align: center;
-  }
-  .affiliations h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  .affiliations ul {
-    list-style: none;
-    margin-bottom: 20px;
-  }
-  .affiliations ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
+.affiliations {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #e3f2fd;
+  border-radius: 15px;
+  text-align: center;
+}
+.affiliations h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+.affiliations ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.affiliations ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
 
-  /* Leadership Section */
-  .leadership {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f5f5f5;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .leadership h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  .leadership .persons{
-    display: flex;
-    width: 80%;
-    gap: 2em;
-    justify-content: center;
-    align-items: center;
-  }
-  .leadership .person {
-    width: 80%;
-    padding: 1em;
-    border: 2px solid gray;
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  .leadership img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
+/* Leadership Section */
+.leadership {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.leadership h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+.leadership .persons {
+  display: flex;
+  width: 80%;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+.leadership .person {
+  width: 80%;
+  padding: 1em;
+  border: 2px solid gray;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.leadership img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
 /*====================================== Contact page ======================================*/
 /* Centers Section */
-  .centers {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f5f5f5;
-    border-radius: 15px;
-  }
-  .centers h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-    text-align: center;
-  }
-  .center {
-    margin-bottom: 20px;
-  }
-  .center h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #222;
-  }
-  .center p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-  .center a {
-    color: #00c2ff;
-  }
-  .center a:hover {
-    text-decoration: underline;
-  }
+.centers {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+.centers h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+.center {
+  margin-bottom: 20px;
+}
+.center h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+.center p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.center a {
+  color: #00c2ff;
+}
+.center a:hover {
+  text-decoration: underline;
+}
 
-  .feedback{
-    padding: 1em;
-  }
-  .feedback-form {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+.feedback {
+  padding: 1em;
+}
+.feedback-form {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    .feedback-form h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.feedback-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .feedback-form label {
-      display: block;
-      margin-top: 15px;
-    }
+.feedback-form label {
+  display: block;
+  margin-top: 15px;
+}
 
-    .feedback-form input,
-    .feedback-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-    .feedback-form button {
-      margin-top: 20px;
-      padding: 12px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.feedback-form button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .success-message {
-      text-align: center;
-      color: green;
-      margin-top: 15px;
-    }
+.success-message {
+  text-align: center;
+  color: green;
+  margin-top: 15px;
+}
 
 /*========================================== courses page ======================================*/
- /* Category Section */
-  .category {
-    padding: 20px 20px;
-    background: #f5f5f5;
-    text-align: center;
-    border-radius: 15px;
-    max-width: 1200px;
-    margin: 0 auto 60px;
-  }
-  .category h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  .course-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-  .course-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    padding: 25px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease;
-    cursor: default;
-  }
-  .course-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  }
-  .course-card i {
-    font-size: 3rem;
-    color: #00c2ff;
-    margin-bottom: 10px;
-  }
-  .course-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: 600;
-  }
-  .course-card p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 15px;
-  }
-  .syllabus-btn, .enroll-now {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
-  }
-  .syllabus-btn {
-    background-color: #00c2ff;
-  }
-  .syllabus-btn:hover {
-    background-color: #0099cc;
-  }
-  .enroll-now {
-    background-color: #00c2ff;
-  }
-  .enroll-now:hover {
-    background-color: #0099cc;
-  }
-  /* Modal */
-  .modal {
+/* Category Section */
+.category {
+  padding: 20px 20px;
+  background: #f5f5f5;
+  text-align: center;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+.category h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+.course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.course-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+.course-card i {
+  font-size: 3rem;
+  color: #00c2ff;
+  margin-bottom: 10px;
+}
+.course-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+.course-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+.syllabus-btn,
+.enroll-now {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+.syllabus-btn {
+  background-color: #00c2ff;
+}
+.syllabus-btn:hover {
+  background-color: #0099cc;
+}
+.enroll-now {
+  background-color: #00c2ff;
+}
+.enroll-now:hover {
+  background-color: #0099cc;
+}
+/* Modal */
+.modal {
   display: none;
   position: fixed;
   top: 0;
@@ -968,7 +1003,7 @@ Map Section
 }
 
 /*============================================ achievements page ==============================*/
-    /* testimonial */
+/* testimonial */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -1099,7 +1134,7 @@ select {
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .leadership .persons{
+  .leadership .persons {
     flex-direction: column;
   }
 }
