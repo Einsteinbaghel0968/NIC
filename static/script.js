@@ -115,6 +115,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
   });
+  // === EMAILJS INTEGRATION ===
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("WjxnLIw5tWrEWY1y1"); // ✅ Your Public Key
+
+    const feedbackForm = document.getElementById("feedback-form");
+    const status = document.getElementById("status");
+
+    if (feedbackForm) {
+      feedbackForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        emailjs.sendForm("service_6e053g1", "template_l9she6b", feedbackForm)
+          .then(() => {
+            status.textContent = "✅ Feedback sent successfully!";
+            status.style.color = "green";
+            feedbackForm.reset();
+          })
+          .catch((error) => {
+            status.textContent = "❌ Failed to send feedback. Please try again.";
+            status.style.color = "red";
+            console.error("EmailJS error:", error);
+          });
+      });
+    }
+  } else {
+    console.error("EmailJS library not loaded. Make sure to include it via <script src='https://cdn.emailjs.com/dist/email.min.js'></script>");
+  }
 });
 
 // === MAIN IMAGE SLIDESHOW ===
@@ -172,6 +198,42 @@ function currentSlide(sliderId, index) {
     console.error("Slider not found or currentSlide not defined:", sliderId);
   }
 }
+
+// Show modal
+function showModal(courseId) {
+  const modal = document.getElementById("syllabus-modal");
+  const title = document.getElementById("modal-title");
+  const content = document.getElementById("modal-content");
+  const course = syllabi[courseId];
+  title.textContent = course.title;
+  content.innerHTML = course.content;
+  modal.style.display = "flex";
+}
+
+// Hide modal
+function hideModal() {
+  document.getElementById("syllabus-modal").style.display = "none";
+}
+
+// Syllabus button listeners
+document.querySelectorAll(".syllabus-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const courseId = button.parentElement.dataset.course;
+    showModal(courseId);
+  });
+});
+document.getElementById("examFilter").addEventListener("change", function () {
+  const selected = this.value;
+  const testimonials = document.querySelectorAll(".testimonial-card");
+
+  testimonials.forEach((card) => {
+    if (selected === "all" || card.dataset.exam === selected) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
 
 // Syllabus data
 const syllabi = {
@@ -416,39 +478,3 @@ const syllabi = {
           - Electrical: Circuit Theory, Machines, Measurement`,
   },
 };
-
-// Show modal
-function showModal(courseId) {
-  const modal = document.getElementById("syllabus-modal");
-  const title = document.getElementById("modal-title");
-  const content = document.getElementById("modal-content");
-  const course = syllabi[courseId];
-  title.textContent = course.title;
-  content.innerHTML = course.content;
-  modal.style.display = "flex";
-}
-
-// Hide modal
-function hideModal() {
-  document.getElementById("syllabus-modal").style.display = "none";
-}
-
-// Syllabus button listeners
-document.querySelectorAll(".syllabus-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const courseId = button.parentElement.dataset.course;
-    showModal(courseId);
-  });
-});
-document.getElementById("examFilter").addEventListener("change", function () {
-  const selected = this.value;
-  const testimonials = document.querySelectorAll(".testimonial-card");
-
-  testimonials.forEach((card) => {
-    if (selected === "all" || card.dataset.exam === selected) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
