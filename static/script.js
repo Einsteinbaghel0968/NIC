@@ -149,6 +149,7 @@ document.querySelectorAll(".syllabus-btn").forEach((button) => {
     showModal(courseId);
   });
 });
+
 document.getElementById("examFilter").addEventListener("change", function () {
   const selected = this.value;
   const testimonials = document.querySelectorAll(".testimonial-card");
@@ -161,6 +162,31 @@ document.getElementById("examFilter").addEventListener("change", function () {
     }
   });
 });
+// ============== Achievements slider =====================
+document.querySelectorAll(".achievement-slider-column").forEach((column) => {
+    const slides = column.querySelectorAll(".multi-slide");
+    let currentIndex = 0;
+
+    // Early exit if no slides
+    if (slides.length === 0) return;
+
+    // Initial show
+    slides[currentIndex].classList.add("active");
+
+    // Function to show a specific slide
+    const showSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    };
+
+    // Auto-slide every 3 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 3000);
+  });
+
 });
 
 // === MAIN IMAGE SLIDESHOW ===
