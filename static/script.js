@@ -141,6 +141,26 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("EmailJS library not loaded. Make sure to include it via <script src='https://cdn.emailjs.com/dist/email.min.js'></script>");
   }
+
+  // Syllabus button listeners
+document.querySelectorAll(".syllabus-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const courseId = button.parentElement.dataset.course;
+    showModal(courseId);
+  });
+});
+document.getElementById("examFilter").addEventListener("change", function () {
+  const selected = this.value;
+  const testimonials = document.querySelectorAll(".testimonial-card");
+
+  testimonials.forEach((card) => {
+    if (selected === "all" || card.dataset.exam === selected) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
 });
 
 // === MAIN IMAGE SLIDESHOW ===
@@ -215,25 +235,7 @@ function hideModal() {
   document.getElementById("syllabus-modal").style.display = "none";
 }
 
-// Syllabus button listeners
-document.querySelectorAll(".syllabus-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const courseId = button.parentElement.dataset.course;
-    showModal(courseId);
-  });
-});
-document.getElementById("examFilter").addEventListener("change", function () {
-  const selected = this.value;
-  const testimonials = document.querySelectorAll(".testimonial-card");
 
-  testimonials.forEach((card) => {
-    if (selected === "all" || card.dataset.exam === selected) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
 
 // Syllabus data
 const syllabi = {
