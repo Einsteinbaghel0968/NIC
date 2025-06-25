@@ -1139,12 +1139,16 @@ select {
 }
 .footer .outer {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 .footer .head {
   width: 40%;
   display: flex;
   flex-direction: column;
+}
+.footer .head h3{
+  margin-bottom: .5em;
 }
 .footer .contact-links {
   display: flex;
