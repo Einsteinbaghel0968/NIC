@@ -125,45 +125,49 @@ document.addEventListener("DOMContentLoaded", function () {
     if (feedbackForm) {
       feedbackForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        emailjs.sendForm("service_6e053g1", "template_l9she6b", feedbackForm)
+        emailjs
+          .sendForm("service_6e053g1", "template_l9she6b", feedbackForm)
           .then(() => {
             status.textContent = "✅ Feedback sent successfully!";
             status.style.color = "green";
             feedbackForm.reset();
           })
           .catch((error) => {
-            status.textContent = "❌ Failed to send feedback. Please try again.";
+            status.textContent =
+              "❌ Failed to send feedback. Please try again.";
             status.style.color = "red";
             console.error("EmailJS error:", error);
           });
       });
     }
   } else {
-    console.error("EmailJS library not loaded. Make sure to include it via <script src='https://cdn.emailjs.com/dist/email.min.js'></script>");
+    console.error(
+      "EmailJS library not loaded. Make sure to include it via <script src='https://cdn.emailjs.com/dist/email.min.js'></script>"
+    );
   }
 
   // Syllabus button listeners
-document.querySelectorAll(".syllabus-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const courseId = button.parentElement.dataset.course;
-    showModal(courseId);
+  document.querySelectorAll(".syllabus-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const courseId = button.parentElement.dataset.course;
+      showModal(courseId);
+    });
   });
-});
 
-document.getElementById("examFilter").addEventListener("change", function () {
-  const selected = this.value;
-  const testimonials = document.querySelectorAll(".testimonial-card");
+  document.getElementById("examFilter").addEventListener("change", function () {
+    const selected = this.value;
+    const testimonials = document.querySelectorAll(".testimonial-card");
 
-  testimonials.forEach((card) => {
-    if (selected === "all" || card.dataset.exam === selected) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+    testimonials.forEach((card) => {
+      if (selected === "all" || card.dataset.exam === selected) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
   });
-});
-// ============== Achievements slider =====================
-document.querySelectorAll(".achievement-slider-column").forEach((column) => {
+  // ============== Achievements slider =====================
+  document.querySelectorAll(".achievement-slider-column").forEach((column) => {
     const slides = column.querySelectorAll(".multi-slide");
     let currentIndex = 0;
 
@@ -186,7 +190,6 @@ document.querySelectorAll(".achievement-slider-column").forEach((column) => {
       showSlide(currentIndex);
     }, 3000);
   });
-
 });
 
 // === MAIN IMAGE SLIDESHOW ===
@@ -260,8 +263,6 @@ function showModal(courseId) {
 function hideModal() {
   document.getElementById("syllabus-modal").style.display = "none";
 }
-
-
 
 // Syllabus data
 const syllabi = {
